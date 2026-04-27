@@ -38,6 +38,7 @@ def build_all_data(
     comments_path: Path,
     danmaku_path: Path,
     output_dir: Path,
+    qwen_script_path: Path,
 ) -> None:
     _log("检查运行依赖...")
     _check_runtime_dependencies()
@@ -63,6 +64,7 @@ def build_all_data(
         comments_path=comments_path,
         danmaku_path=danmaku_path,
         output_path=video_output,
+        qwen_script_path=qwen_script_path,
     )
 
     _log("开始执行 analyze_dashboard，生成 dashboard_data.json ...")
@@ -74,6 +76,7 @@ def build_all_data(
         danmaku_path=danmaku_path,
         video_analysis_path=video_output,
         output_path=dashboard_output,
+        qwen_script_path=qwen_script_path,
     )
 
     _log(f"全部任务完成。输出目录：{output_dir}")
@@ -114,6 +117,11 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=project_root / "dataProcess" / "output",
     )
+    parser.add_argument(
+        "--qwen-script",
+        type=Path,
+        default=Path(__file__).resolve().parents[1] / "Qwen_Analysis.py",
+    )
     return parser.parse_args()
 
 
@@ -126,4 +134,5 @@ if __name__ == "__main__":
         comments_path=args.comments,
         danmaku_path=args.danmaku,
         output_dir=args.output_dir,
+        qwen_script_path=args.qwen_script,
     )
