@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国地方戏剧文化大数据分析平台</title>
+
+    <!-- 页面全局样式 -->
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+
+    <!-- 可视化看板主容器 -->
+    <div class="dashboard-wrapper">
+        <!-- 顶部信息栏：统计摘要 + 主标题 + 署名 -->
+        <header>
+            <div class="header-left">
+                <span>已收录剧种: <strong>453 个</strong></span>
+                <span>分析弹幕数量: <strong>57,958 条</strong></span>
+                <span>受众评论抓取: <strong>3569 条</strong></span>
+            </div>
+            <div class="header-center">
+                <h1>
+                    中国地方戏剧文化大数据分析平台
+                    <span class="header-subtitle">NLP 与 LLM 双引擎驱动</span>
+                </h1>
+            </div>
+            <div class="header-right">
+                戏韵数联 / 河南大学
+            </div>
+        </header>
+
+        <!-- 左侧图表区 -->
+        <aside class="left-column">
+            <section class="chart-panel">
+                <div class="panel-title">全国剧种数量 Top 10 省份</div>
+                <div class="chart-box" id="chart-left-top"></div>
+            </section>
+            <section class="chart-panel">
+                <div class="panel-title">戏曲现代受众关注点与画像</div>
+                <div class="chart-box" id="chart-left-bottom"></div>
+            </section>
+        </aside>
+
+        <!-- 中央地图区 -->
+        <main class="center-column">
+            <div class="map-box" id="chart-center-map"></div>
+            <div class="map-approval">
+                地图数据来源：高德开放平台 (阿里云 DataV) | 审图号：GS(2025)5996
+            </div>
+        </main>
+
+        <!-- 右侧图表区 -->
+        <aside class="right-column">
+            <section class="chart-panel">
+                <div class="panel-title">剧种核心意象词云</div>
+                <div class="chart-box" id="chart-right-top"></div>
+            </section>
+            <section class="chart-panel">
+                <div class="panel-title">经典剧目情感起伏曲线</div>
+                <div class="chart-box" id="chart-right-bottom"></div>
+            </section>
+        </aside>
+
+    </div>
+
+    <!-- 弹窗 1：省份/剧种受众画像（TGI） -->
+    <div id="tgi-modal" class="modal-overlay">
+        <div class="modal-content tgi-modal-content">
+            <span class="modal-close" onclick="closeTgiModal()">&times;</span>
+            <div class="modal-header">
+                <h2><span id="tgi-modal-title">全国</span> - 代表剧种受众具体画像</h2>
+            </div>
+            <div class="modal-body">
+                <div class="tgi-charts-container">
+                    <div class="tgi-chart-box">
+                        <div class="tgi-chart-title">年龄分布 & TGI 指数</div>
+                        <div id="tgi-age-chart" style="width: 100%; height: 260px;"></div>
+                    </div>
+                    <div class="tgi-chart-box">
+                        <div class="tgi-chart-title">性别分布 & TGI 指数</div>
+                        <div id="tgi-gender-chart" style="width: 100%; height: 260px;"></div>
+                    </div>
+                </div>
+                <div class="nlp-excerpt-box" style="margin-top: 20px;">
+                    <div class="excerpt-title">相关分析</div>
+                    <div class="excerpt-text" id="tgi-analysis-text">加载中...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 弹窗 2：剧种详情列表（动态注入内容） -->
+    <div id="opera-list-modal" class="modal-overlay">
+        <div class="modal-content" style="width: 45%; min-width: 550px;">
+            <span class="modal-close" onclick="closeOperaListModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="opera-list-title" style="margin-bottom: 10px;">剧种详情</h2>
+            </div>
+            <div class="modal-body" id="opera-list-body" style="max-height: 55vh; overflow-y: auto; padding-right: 10px;">
+                </div>
+        </div>
+    </div>
+
+    <!-- 弹窗 3：高能弹幕提取与 AI 解析 -->
+    <div id="danmaku-modal" class="modal-overlay">
+        <div class="modal-content" style="width: 35%; min-width: 450px;"> 
+            <span class="modal-close" onclick="closeDanmakuModal()">&times;</span>
+            <div class="modal-header">
+                <h2>💥 高能弹幕提取 <span style="font-size:14px; color:#a1b0c8;"></span></h2>
+            </div>
+            <div class="modal-body">
+                <div class="nlp-excerpt-box" style="border-left: 4px solid #ff2277; max-height: 35vh; overflow-y: auto; padding-right: 10px; margin-bottom: 15px;" id="danmaku-list-body">
+                    </div>
+                
+                <div id="ai-analysis-trigger" style="text-align: center; margin-top: 15px;">
+                    <button onclick="startDanmakuAIAnalysis()" style="background: linear-gradient(90deg, #0075ff, #00eaff); color: #fff; border: none; padding: 10px 25px; border-radius: 20px; font-size: 15px; cursor: pointer; font-weight: bold; box-shadow: 0 0 15px rgba(0,234,255,0.4); transition: transform 0.2s;">
+                         AI 解析
+                    </button>
+                </div>
+
+                <div id="ai-analysis-loading" style="display: none; text-align: center; margin-top: 20px;">
+                    <div style="color: #ffb020; font-size: 15px; letter-spacing: 1px; font-style: italic;">
+                        <span style="display:inline-block; animation: pulse 1s infinite;">正在提取弹幕内容并生成分析...</span>
+                    </div>
+                </div>
+
+                <div id="ai-analysis-result" style="display: none; margin-top: 15px; background: rgba(0, 234, 255, 0.05); border: 1px solid rgba(0, 234, 255, 0.3); border-radius: 8px; padding: 15px;">
+                    <div style="margin-bottom: 12px;">
+                        <span style="color: #00eaff; font-weight: bold; font-size: 16px;"> 分析 (Analysis)：</span>
+                        <div id="danmaku-insight" style="color: #e0e6ed; font-size: 14px; line-height: 1.6; margin-top: 6px; letter-spacing: 1px;"></div>
+                    </div>
+                    <div style="border-top: 1px dashed rgba(255,255,255,0.15); padding-top: 12px;">
+                        <span style="color: #ffb020; font-weight: bold; font-size: 16px;"> 建议 (Advice)：</span>
+                        <div id="danmaku-decision" style="color: #e0e6ed; font-size: 14px; line-height: 1.6; margin-top: 6px; letter-spacing: 1px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 弹窗 4：弹幕心理分析 -->
+    <div id="nlp-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeNlpModal()">&times;</span>
+            <div class="modal-header">
+                <h2>🧠 弹幕受众心理分析 <span style="font-size:14px; color:#a1b0c8;">(AI 情感分析模型)</span></h2>
+            </div>
+            <div class="modal-body">
+                <div class="nlp-keyword">
+                    核心关键词：<span id="modal-word" style="color:#00eaff; font-size:24px; font-weight:bold; margin-left:10px;">加载中</span>
+                </div>
+                
+                <div class="nlp-metrics">
+                    <div class="metric-box">
+                        <div class="metric-title">情感正向指数 (Score)</div>
+                        <div class="metric-value" id="modal-score">0.00</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-title">情感极性 (Polarity)</div>
+                        <div class="metric-value" id="modal-sentiment" style="font-size: 18px;">分析中</div>
+                    </div>
+                </div>
+
+                <div class="nlp-excerpt">
+                    <div style="color:#a1b0c8; margin-bottom:8px; font-size:13px;">典型语境下 AI 深度解读：</div>
+                    <div class="nlp-excerpt-box" id="modal-excerpt">
+                        正在调取大模型分析数据...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 加载动画 -->
+    <div class="initial-loader-container">
+        <div class="tech-spinner"></div>
+        <div class="loading-text">DATA LOADING...</div>
+    </div>
+
+    <!-- ECharts 核心库与词云插件 -->
+    <script src="js/echarts.min.js" defer></script>
+    <script src="js/echarts-wordcloud.min.js" defer></script>
+
+    <!-- 页面脚本：数据 -> UI 交互 -> 图表渲染 -> 主流程 -->
+    <script src="js/data.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/charts.js" defer></script>
+    <script src="js/main.js" defer></script>
+    
+</body>
+</html>

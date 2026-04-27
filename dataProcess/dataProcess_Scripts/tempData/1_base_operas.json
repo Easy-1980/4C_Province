@@ -1,0 +1,4406 @@
+{
+  "全国": {
+    "topProvinces": {
+      "names": [
+        "安徽",
+        "甘肃",
+        "河南",
+        "陕西",
+        "河北",
+        "贵州",
+        "湖南",
+        "山东",
+        "福建",
+        "湖北"
+      ],
+      "values": [
+        16,
+        18,
+        28,
+        28,
+        29,
+        33,
+        33,
+        34,
+        44,
+        51
+      ]
+    },
+    "wordCloud": [
+      {
+        "name": "戏曲",
+        "value": 100
+      },
+      {
+        "name": "文化",
+        "value": 80
+      }
+    ]
+  },
+  "上海": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        0,
+        9,
+        1
+      ]
+    },
+    "operas": [
+      {
+        "name": "沪剧",
+        "dynasty": "1941年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "滑稽戏",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "话剧",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": false,
+        "level": ""
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "沪剧",
+        "dynasty": "1941年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "滑稽戏",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "话剧",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": false,
+        "level": ""
+      },
+      {
+        "name": "奉贤山歌剧",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "扁担戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "闵行皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "海派木偶戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "奉贤皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "松江皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "徐汇皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "云南": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        1,
+        3,
+        2
+      ]
+    },
+    "operas": [
+      {
+        "name": "滇剧",
+        "dynasty": "1820",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "云南花灯戏",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "白剧",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "滇剧",
+        "dynasty": "1820",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "云南花灯戏",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "白剧",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "傣剧",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "彝剧",
+        "dynasty": "1958",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "云南壮剧",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ]
+  },
+  "内蒙古": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        0,
+        1,
+        2
+      ]
+    },
+    "operas": [
+      {
+        "name": "巴林左旗皮影戏",
+        "dynasty": "民国",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "二人台",
+        "dynasty": "清光绪年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "东路二人台",
+        "dynasty": "民国初",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "巴林左旗皮影戏",
+        "dynasty": "民国",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "二人台",
+        "dynasty": "清光绪年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "东路二人台",
+        "dynasty": "民国初",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ]
+  },
+  "北京": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        2,
+        1,
+        0
+      ]
+    },
+    "operas": [
+      {
+        "name": "京剧",
+        "dynasty": "清代乾隆五十五年1790年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "世界级"
+      },
+      {
+        "name": "北京皮影戏",
+        "dynasty": "明正德年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "北方昆曲",
+        "dynasty": "明万历年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "京剧",
+        "dynasty": "清代乾隆五十五年1790年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "世界级"
+      },
+      {
+        "name": "北京皮影戏",
+        "dynasty": "明正德年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "北方昆曲",
+        "dynasty": "明万历年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ]
+  },
+  "吉林": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        1,
+        0,
+        2,
+        3
+      ]
+    },
+    "operas": [
+      {
+        "name": "吉剧",
+        "dynasty": "1959年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "满族新城戏",
+        "dynasty": "1959年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "黄龙戏",
+        "dynasty": "清朝光绪年间后期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "吉剧",
+        "dynasty": "1959年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "满族新城戏",
+        "dynasty": "1959年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "黄龙戏",
+        "dynasty": "清朝光绪年间后期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "舒兰皮影",
+        "dynasty": "唐朝",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "朝鲜族唱剧",
+        "dynasty": "20世纪初",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "关东吕剧",
+        "dynasty": "清咸丰年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "四川": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        3,
+        9,
+        1
+      ]
+    },
+    "operas": [
+      {
+        "name": "川剧（四川省、泸州、成都市）",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "川北灯戏（南充市）",
+        "dynasty": "明嘉靖年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "德格格萨尔藏戏（德格县）",
+        "dynasty": "清同治年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "川剧（四川省、泸州、成都市）",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "川北灯戏（南充市）",
+        "dynasty": "明嘉靖年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "德格格萨尔藏戏（德格县）",
+        "dynasty": "清同治年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "巴塘藏戏（巴塘县）",
+        "dynasty": "清顺治年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "色达藏戏（色达县）",
+        "dynasty": "20世纪上半叶民国时期",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "四川皮影戏（阆中市、南部县）",
+        "dynasty": "清康熙年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "川北大木偶戏（南充市仪陇县）",
+        "dynasty": "清朝初期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "中型杖头木偶戏（内江市资中县）",
+        "dynasty": "清光绪年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "射箭提阳戏（广元市昭化区）",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "旺苍端公戏（广元市旺苍县）",
+        "dynasty": "清康熙年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "马鸣阳戏（绵阳市梓潼县）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "资阳河川剧艺术（资阳市）",
+        "dynasty": "清乾隆、嘉庆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "四川车灯（车车灯）（川渝地区）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "天津": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    "operas": [
+      {
+        "name": "评剧",
+        "dynasty": "1935年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "宝坻皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "天津木偶戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "评剧",
+        "dynasty": "1935年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "宝坻皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "天津木偶戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "宁夏": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    "operas": [
+      {
+        "name": "秦腔",
+        "dynasty": "明代中叶",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "秦腔",
+        "dynasty": "明代中叶",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ]
+  },
+  "安徽": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        1,
+        7,
+        6,
+        1
+      ]
+    },
+    "operas": [
+      {
+        "name": "青阳腔（青阳县）",
+        "dynasty": "明代嘉靖年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "岳西高腔（岳西县）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "徽剧（安徽省）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "青阳腔（青阳县）",
+        "dynasty": "明代嘉靖年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "岳西高腔（岳西县）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "徽剧（安徽省）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "四平调（砀山县 ）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "庐剧（合肥市）",
+        "dynasty": "清代中期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "黄梅戏（安庆市）",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "泗州戏（宿州市）（蚌埠市）",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "徽州目连戏",
+        "dynasty": "明万历年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "南陵目连戏",
+        "dynasty": "宋代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "池州傩戏（池州市）",
+        "dynasty": "先秦时期",
+        "dynastyBucket": "其他",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "坠子戏（宿州市）",
+        "dynasty": "清代中期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "文南词（宿松县）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "二夹弦（亳州市）",
+        "dynasty": "清代中期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "嗨子戏（阜南县）",
+        "dynasty": "清代中期嘉庆至道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "淮北梆子戏（宿州市）（阜阳市）（亳州市）",
+        "dynasty": "1960年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "花鼓戏（宿州市）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "山东": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        11,
+        20,
+        3
+      ]
+    },
+    "operas": [
+      {
+        "name": "吕剧",
+        "dynasty": "清光绪6年1880年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "柳子戏",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "山东梆子",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "吕剧",
+        "dynasty": "清光绪6年1880年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "柳子戏",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "山东梆子",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "大平调",
+        "dynasty": "明代末年",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "柳腔",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "大弦戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "四平调",
+        "dynasty": "20世纪50年代",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "柳琴戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "莱芜梆子",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "枣梆",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "鹧鸪戏",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "五音戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "茂腔",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "蓝关戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "沾化渔鼓戏",
+        "dynasty": "清代乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "一勾勾",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "泰山皮影戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "济南皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "定陶皮影",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "二夹弦",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "章丘梆子",
+        "dynasty": "清代初年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "化妆坠子",
+        "dynasty": "20世纪30年代",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "坠子戏",
+        "dynasty": "20世纪40年代",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "在平花鼓戏",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "蛤蟆嗡",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "四根弦",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "王皮戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "渔鼓戏（除沾化外的分支）",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "蓝关戏（道情戏分支）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "肘鼓子戏（柳琴戏、茂腔、柳腔的母题剧种）",
+        "dynasty": "明代末年",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "马堤吹腔（柳子戏分支）",
+        "dynasty": "清代初年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "夏津柳子戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "东路梆子",
+        "dynasty": "清代初年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "菏泽大平调",
+        "dynasty": "明代末年",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "山西": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        1,
+        3,
+        1
+      ]
+    },
+    "operas": [
+      {
+        "name": "晋剧",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "蒲州梆子(临汾市、运城市)",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "北路梆子（大同、忻州）",
+        "dynasty": "1954年正式命名",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "晋剧",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "蒲州梆子(临汾市、运城市)",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "北路梆子（大同、忻州）",
+        "dynasty": "1954年正式命名",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "晋中秧歌",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "太原秧歌",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "未计入"
+      }
+    ]
+  },
+  "广东": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        5,
+        8,
+        3,
+        0
+      ]
+    },
+    "operas": [
+      {
+        "name": "粤剧（佛山）",
+        "dynasty": "明代嘉靖年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "世界级"
+      },
+      {
+        "name": "潮剧（潮汕）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "正字戏（汕尾）",
+        "dynasty": "明宣德七年",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "粤剧（佛山）",
+        "dynasty": "明代嘉靖年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "世界级"
+      },
+      {
+        "name": "潮剧（潮汕）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "正字戏（汕尾）",
+        "dynasty": "明宣德七年",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "白字戏（汕尾）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "西秦戏（海丰县）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "花朝戏（紫金县）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "广东汉剧（潮州）",
+        "dynasty": "清代乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "雷剧（雷州市）",
+        "dynasty": "清嘉庆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "陆丰皮影戏",
+        "dynasty": "宋代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "高州木偶戏",
+        "dynasty": "汉代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "潮州铁枝木偶戏",
+        "dynasty": "南宋末年",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "木偶戏（五华提线木偶）",
+        "dynasty": "明代初年",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "广东木偶戏",
+        "dynasty": "元朝",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "揭阳铁枝木偶戏",
+        "dynasty": "南宋末年",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "湛江木偶戏",
+        "dynasty": "明万历年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "南音（珠三角）",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ]
+  },
+  "广西": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        0,
+        5,
+        0
+      ]
+    },
+    "operas": [
+      {
+        "name": "桂剧（桂林市）",
+        "dynasty": "清光绪年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "彩调剧（桂林市）",
+        "dynasty": "清光绪年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "邕剧（龙州县、南宁市）",
+        "dynasty": "清嘉庆、道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "桂剧（桂林市）",
+        "dynasty": "清光绪年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "彩调剧（桂林市）",
+        "dynasty": "清光绪年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "邕剧（龙州县、南宁市）",
+        "dynasty": "清嘉庆、道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "壮剧（师公戏（南宁））",
+        "dynasty": "清同治年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "丝弦戏（南宁）",
+        "dynasty": "清乾隆末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "未计入"
+      }
+    ]
+  },
+  "新疆": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    "operas": [
+      {
+        "name": "曲子戏",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "迷糊戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "曲子戏",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "迷糊戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ]
+  },
+  "江苏": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        1,
+        4,
+        8,
+        1
+      ]
+    },
+    "operas": [
+      {
+        "name": "昆曲",
+        "dynasty": "元末明初",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "淮剧",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "锡剧",
+        "dynasty": "清代中期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "昆曲",
+        "dynasty": "元末明初",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "淮剧",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "锡剧",
+        "dynasty": "清代中期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "绍剧",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "越剧",
+        "dynasty": "1906年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "扬州杖头木偶戏",
+        "dynasty": "清代中期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "扬州花鼓戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "泰兴花鼓",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "泗洲戏",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "淮红戏",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "如皋杖头木偶戏",
+        "dynasty": "清、民国",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "海安花鼓",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "浒澪花鼓",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "渔篮花鼓",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "江西": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        1,
+        4,
+        4,
+        2
+      ]
+    },
+    "operas": [
+      {
+        "name": "赣剧（赣东北）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "高安采茶戏",
+        "dynasty": "清乾隆末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "景德镇瓷偶戏",
+        "dynasty": "1926年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "未计入"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "赣剧（赣东北）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "高安采茶戏",
+        "dynasty": "清乾隆末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "景德镇瓷偶戏",
+        "dynasty": "1926年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "木偶戏（乐平）",
+        "dynasty": "1929年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "马灯戏（乐平永善县）",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "傩戏",
+        "dynasty": "唐代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "文词戏（景德镇）",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "木偶戏（高安）",
+        "dynasty": "明代中叶前",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "坐堂戏（高安）",
+        "dynasty": "明代中叶前",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "瑞河戏（高安、上高、宜丰）",
+        "dynasty": "明代中叶前",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "景德镇采茶戏（景德镇市、都昌县、浮梁县）",
+        "dynasty": "清咸丰前",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "未计入"
+      }
+    ]
+  },
+  "河北": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        3,
+        12,
+        10,
+        3
+      ]
+    },
+    "operas": [
+      {
+        "name": "河北梆子（保定市定兴县）",
+        "dynasty": "清道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "乱弹（威县乱弹）（威县）",
+        "dynasty": "清康熙末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "乱弹（南岩乱弹）（高邑县）",
+        "dynasty": "清咸丰年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "河北梆子（保定市定兴县）",
+        "dynasty": "清道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "乱弹（威县乱弹）（威县）",
+        "dynasty": "清康熙末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "乱弹（南岩乱弹）（高邑县）",
+        "dynasty": "清咸丰年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "石家庄丝弦（石家庄市）",
+        "dynasty": "明万历年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "评剧（滦南县、石家庄市）",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "平调加落子（武安市）",
+        "dynasty": "明末清初加清末",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "隆尧秧歌戏（隆尧县）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "定州秧歌戏（定州市）",
+        "dynasty": "清代中后期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "蔚县秧歌（蔚县）",
+        "dynasty": "明末清初至清代中前期",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "哈哈腔（清苑县、青县）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "二人台（康保县）",
+        "dynasty": "清代中后期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "武安傩戏（武安市）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "唐山皮影戏（唐山市）",
+        "dynasty": "明代末期",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "冀南皮影戏（邯郸市）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "河间皮影戏（河间市）",
+        "dynasty": "明代末期",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "昌黎皮影戏（昌黎县）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "乐亭皮影戏（乐亭县）",
+        "dynasty": "金代盛行于清中晚期",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "沙河皮影戏（沙河市）",
+        "dynasty": "元代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "保定老调（保定市）",
+        "dynasty": "清道光、咸丰年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "安国老调（安国市）",
+        "dynasty": "19世纪初",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "四股弦（冀南四股弦）（巨鹿县、馆陶县、魏县、肥乡县）",
+        "dynasty": "清道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "赛戏（邯郸市、武安市、涉县）",
+        "dynasty": "宋代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "永年西调（永年县）",
+        "dynasty": "清咸丰年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "坠子戏（深泽县）",
+        "dynasty": "20世纪30年代末",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "西路梆子（海兴县）",
+        "dynasty": "清道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "南路丝弦（邢台市）",
+        "dynasty": "明万历年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "唐剧（唐山市）",
+        "dynasty": "20世纪60年代",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "曲长城木偶戏（阳原县）",
+        "dynasty": "明万历年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "河南": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        1,
+        2,
+        15,
+        9
+      ]
+    },
+    "operas": [
+      {
+        "name": "豫剧",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "河南曲剧",
+        "dynasty": "1926",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "河南越调",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "豫剧",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "河南曲剧",
+        "dynasty": "1926",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "河南越调",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "越调",
+        "dynasty": "清代乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "豫西梆子",
+        "dynasty": "清康熙年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "豫东梆子",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "怀梆",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "花鼓戏",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "南阳皮影戏",
+        "dynasty": "宋代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "南阳曲子、洛阳曲子",
+        "dynasty": "十九世纪二十年代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "南阳曲剧",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "南阳越调、河南越调",
+        "dynasty": "明嘉靖年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "灵宝木偶戏",
+        "dynasty": "清代中后期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "灵宝皮影戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "灵宝道情戏",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "内黄皮影戏",
+        "dynasty": "1907",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "灵宝蒲剧",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "高跷曲",
+        "dynasty": "1921",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "豫西花鼓戏",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "木偶戏",
+        "dynasty": "1923",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "木偶戏",
+        "dynasty": "1879年前后",
+        "dynastyBucket": "其他",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "密县曲子戏",
+        "dynasty": "1920年前后",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "博爱曲子",
+        "dynasty": "1936",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "镇平高台曲",
+        "dynasty": "1929",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "镇平花鼓戏",
+        "dynasty": "1921",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "博爱花鼓戏",
+        "dynasty": "1914",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "木偶戏",
+        "dynasty": "清代中后期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "未计入"
+      }
+    ]
+  },
+  "浙江": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        1,
+        2,
+        2,
+        1
+      ]
+    },
+    "operas": [
+      {
+        "name": "越剧",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "绍剧",
+        "dynasty": "明嘉靖年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "婺剧",
+        "dynasty": "明代中叶",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "越剧",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "绍剧",
+        "dynasty": "明嘉靖年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "婺剧",
+        "dynasty": "明代中叶",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "睦剧（淳安、开化、常山等）",
+        "dynasty": "清光绪年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "杭剧（杭州、嘉兴、湖州）",
+        "dynasty": "1923年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "杭州腔（杭州）",
+        "dynasty": "元末明初",
+        "dynastyBucket": "元代",
+        "isICH": false,
+        "level": ""
+      }
+    ]
+  },
+  "海南": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        2,
+        2,
+        1,
+        0
+      ]
+    },
+    "operas": [
+      {
+        "name": "琼剧",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "临高人偶戏",
+        "dynasty": "清康熙年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "文昌公仔戏",
+        "dynasty": "元代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "琼剧",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "临高人偶戏",
+        "dynasty": "清康熙年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "文昌公仔戏",
+        "dynasty": "元代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "三江公仔戏",
+        "dynasty": "元代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "海南斋戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ]
+  },
+  "湖北": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        1,
+        2,
+        48,
+        0
+      ]
+    },
+    "operas": [
+      {
+        "name": "汉剧",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "楚剧",
+        "dynasty": "清道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "荆州花鼓戏",
+        "dynasty": "清道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "汉剧",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "楚剧",
+        "dynasty": "清道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "荆州花鼓戏",
+        "dynasty": "清道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "山二黄",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "荆河戏",
+        "dynasty": "清代初年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "南剧",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "东路花鼓戏",
+        "dynasty": "清代道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "崇阳提琴戏",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "湖北越调",
+        "dynasty": "清代乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "武当神戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "武汉杖头木偶戏",
+        "dynasty": "唐代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "傩戏",
+        "dynasty": "明代以前",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "江汉平原皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "花鼓戏",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "兴山踩堂戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "郧剧",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "襄阳花鼓戏",
+        "dynasty": "清代道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "采茶戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "随州花鼓戏",
+        "dynasty": "清代道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "梁山调",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "远安花鼓戏",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "恩施灯戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "鹤峰柳子戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "巴东堂戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "大悟北路子花鼓戏",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "英山采茶戏",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "文曲戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "东宝梁山调",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "下谷堂戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "郧阳二棚子戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "襄宛皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "远安皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "云梦皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "渔鼓皮影",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "下谷皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "秭归皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "堵河皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "东宝沮漳皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "曾都皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "通州打锣腔",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "襄阳曲剧",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "通山采茶戏",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "大悟高腔皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "分乡皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "京山皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "沙洋皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "天门皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "秭归建东花鼓戏",
+        "dynasty": "清代末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "麻城皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "红安皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "巴东皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "湖南": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        1,
+        12,
+        17,
+        0
+      ]
+    },
+    "operas": [
+      {
+        "name": "涟源湘剧（娄底市、涟源市）",
+        "dynasty": "清康熙年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "辰河高腔（辰溪县、泸溪县）",
+        "dynasty": "明代初期、清道光、咸丰年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "常德高腔（常德市）",
+        "dynasty": "明万历至清乾嘉年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "涟源湘剧（娄底市、涟源市）",
+        "dynasty": "清康熙年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "辰河高腔（辰溪县、泸溪县）",
+        "dynasty": "明代初期、清道光、咸丰年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "常德高腔（常德市）",
+        "dynasty": "明万历至清乾嘉年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "湘剧（长沙市、湘潭市）",
+        "dynasty": "明成化年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "巴陵戏（岳阳市）",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "荆河戏（常德市澧县）",
+        "dynasty": "清代初年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "通道侗戏（通道侗族自治县）",
+        "dynasty": "清嘉庆至道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "辰河目连戏（怀化市溆浦县）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "侗族傩戏（新晃侗族自治县）",
+        "dynasty": "明永乐年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "沅陵辰州傩戏（沅陵县）",
+        "dynasty": "清康熙年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "梅山傩戏（冷水江市）",
+        "dynasty": "战国时期",
+        "dynastyBucket": "其他",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "临武傩戏（郴州市临武县）",
+        "dynasty": "明成化年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "湖南皮影戏（衡山县）",
+        "dynasty": "清顺治初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "邵阳布袋戏（邵阳县）",
+        "dynasty": "元末明初",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "湖南杖头木偶戏（全省）",
+        "dynasty": "13世纪",
+        "dynastyBucket": "其他",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "花鼓戏（岳阳县、邵阳市、常德市）",
+        "dynasty": "清嘉庆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "衡州花鼓戏（衡阳市）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "临湘花鼓戏（临湘市）",
+        "dynasty": "清道光年初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "长沙花鼓戏（湘中、湘东、洞庭湖滨）",
+        "dynasty": "清道光至同治年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "祁剧（祁阳县）",
+        "dynasty": "明代中叶",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "张家界阳戏（张家界市永定区）",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "上河阳戏（怀化市）",
+        "dynasty": "清道光年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "衡阳湘剧（衡阳市）",
+        "dynasty": "明嘉靖年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "邵阳花鼓戏（邵阳市）",
+        "dynasty": "清道光、咸丰年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "常德花鼓戏（常德市）",
+        "dynasty": "清乾隆、嘉庆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "茶陵湘剧（株洲市茶陵县 ）",
+        "dynasty": "明初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "永州花鼓戏 / 零陵花鼓戏（永州市道县）",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "平江皮影戏（平江县）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "龙山木偶戏（湘西土家族苗族自治州州龙山县）",
+        "dynasty": "清康熙至雍正年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "慈利汉戏（张家界慈利市）",
+        "dynasty": "明万历年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "常宁马灯戏（常宁市）",
+        "dynasty": "清朝末期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "瑶族木偶戏 （邵阳市洞口县）",
+        "dynasty": "清代晚期至近代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "澳门": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "operas": [
+      {
+        "name": "土生土语话剧",
+        "dynasty": "近现代",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "土生土语话剧",
+        "dynasty": "近现代",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ]
+  },
+  "甘肃": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        2,
+        8,
+        7,
+        0
+      ]
+    },
+    "operas": [
+      {
+        "name": "敦煌曲子戏（敦煌市）",
+        "dynasty": "清雍正年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "华亭曲子戏（华亭县）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "甘肃调（天水市）",
+        "dynasty": "明代中叶",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "敦煌曲子戏（敦煌市）",
+        "dynasty": "清雍正年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "华亭曲子戏（华亭县）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "甘肃调（天水市）",
+        "dynasty": "明代中叶",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "白银曲子戏（白银市）",
+        "dynasty": "1875年",
+        "dynastyBucket": "其他",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "民勤曲子戏（威武市民勤县）",
+        "dynasty": "明代中叶",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "陇剧（庆阳市环县）",
+        "dynasty": "清道光、咸丰年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "南木特藏戏（甘南藏族自治州）",
+        "dynasty": "清康熙至乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "环县道情皮影戏（庆阳市环县）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "通渭影子腔（通渭县）",
+        "dynasty": "清康熙年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "武都高山戏（陇南市）",
+        "dynasty": "元末明初",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "通渭小曲戏（通渭县）",
+        "dynasty": "明代盛行、清代成熟",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "秦安小曲（天水市秦安县）",
+        "dynasty": "明代中叶",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "玉垒花灯戏（陇南市文县）",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "灯盏头戏（平凉市灵台县）",
+        "dynasty": "明代中叶",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "凉州半台戏（武威市凉州区）",
+        "dynasty": "清代中后期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "西和木偶戏（陇南市西和县）",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "陇南影子腔（陇南市西和县、礼县）",
+        "dynasty": "清康熙末年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "兰州鼓子（兰州市）",
+        "dynasty": "宋代待考",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ]
+  },
+  "福建": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        5,
+        15,
+        23,
+        1
+      ]
+    },
+    "operas": [
+      {
+        "name": "闽剧",
+        "dynasty": "二十世纪初",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "蒲仙戏",
+        "dynasty": "宋代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "高甲戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "闽剧",
+        "dynasty": "二十世纪初",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "蒲仙戏",
+        "dynasty": "宋代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "高甲戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "政和东平茶灯戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "游春戏",
+        "dynasty": "清初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "政和四平剧",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "梨园戏",
+        "dynasty": "宋代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "潮剧",
+        "dynasty": "明朝",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "永安大腔戏",
+        "dynasty": "明朝中期",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "屏南县四平戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "泰宁梅林戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "闽西汉剧",
+        "dynasty": "清代中期",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "寿宁北路戏",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "打城戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "杂剧作场戏",
+        "dynasty": "宋代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "平讲戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "屏南平讲戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "泉州提线木偶戏",
+        "dynasty": "汉唐、宋代成熟",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "晋江布袋木偶戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "漳州布袋木偶戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "闽西客家木偶戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "歌仔戏",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "邵武三角戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "松溪木偶戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "诏安铁枝戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "南靖竹马戏",
+        "dynasty": "唐代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "泉州南派布袋戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "沙县肩头棚",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "南平南词戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "闽西上杭傀儡戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "柘荣布袋戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "闽南皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "屏南杖头木偶戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "惠安南派布袋戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "尤溪南芹小腔戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "永安大腔",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "傀儡戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "平讲戏(福安)",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "竹马戏（漳浦）",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "政和四平提线木偶戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "南剑戏",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "延平金线大腔傀儡戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "政和木偶戏",
+        "dynasty": "明末清初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "邵武木偶戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "市级"
+      }
+    ]
+  },
+  "贵州": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        2,
+        13,
+        17,
+        1
+      ]
+    },
+    "operas": [
+      {
+        "name": "遵义花灯戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "阳戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "黔剧",
+        "dynasty": "近现代",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "遵义花灯戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "阳戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "黔剧",
+        "dynasty": "近现代",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "遵义坛戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "侗戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "布依戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "安顺地戏（军傩）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "傩堂戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "石阡木偶戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "思南花灯戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "独山花灯戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "彝族撮泰吉",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "仡佬族傩戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "荔波布依族傩戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "贵州梆子戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "瑶白大戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "文昌戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "梓潼戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "目连戏",
+        "dynasty": "宋代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "麒麟狮子灯",
+        "dynasty": "唐代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "文琴戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "思州喜傩神",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "镇远土家族傩戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "蓬莱布依地戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "马路屯堡地戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "丝弦灯",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "仡佬族滚龙戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "端公戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "马马灯",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "茶灯",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "布依族 “丫面”",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "苗族武教戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "灯夹戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "辽宁": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        1,
+        11,
+        1
+      ]
+    },
+    "operas": [
+      {
+        "name": "复州皮影戏",
+        "dynasty": "明万历年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "奉天落子",
+        "dynasty": "1930年前后",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "岫岩皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "复州皮影戏",
+        "dynasty": "明万历年间",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "奉天落子",
+        "dynasty": "1930年前后",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "岫岩皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "盖州皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "锦州皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "辽西木偶戏",
+        "dynasty": "清代中叶",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "海城喇叭戏",
+        "dynasty": "清代乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "凌源皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "海城皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "阜新蒙古剧",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "黑山皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "宽甸八河川皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "鞍山皮影戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "重庆": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        2,
+        11,
+        0
+      ]
+    },
+    "operas": [
+      {
+        "name": "梁山灯戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "酉阳土家面具阳戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "接龙傩戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "梁山灯戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "酉阳土家面具阳戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "接龙傩戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "阳戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "余家傩戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "石壕杨戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "踩堂戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "亚亚戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "酉阳花灯",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "涪州川剧",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "川剧",
+        "dynasty": "清代中期定型",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "包谷灯戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "秀山花灯戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  },
+  "陕西": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        1,
+        6,
+        11,
+        9
+      ]
+    },
+    "operas": [
+      {
+        "name": "汉剧",
+        "dynasty": "清康乾年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "秦腔",
+        "dynasty": "元代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "陕北道情",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "汉剧",
+        "dynasty": "清康乾年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "秦腔",
+        "dynasty": "元代",
+        "dynastyBucket": "元代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "陕北道情",
+        "dynasty": "清末民初",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "商洛道情",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "陕西道情",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "跳戏（合阳县）",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "眉户戏",
+        "dynasty": "清末明初",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "线腔戏（合阳县）",
+        "dynasty": "明末",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "弦子戏（平利县）",
+        "dynasty": "清嘉庆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "老腔戏（华阴县）",
+        "dynasty": "清代乾隆以前",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "韩城秧歌戏",
+        "dynasty": "清代同治光绪年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "评剧",
+        "dynasty": "1935",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "同州梆子",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "越调（安康、旬阳山区）",
+        "dynasty": "1845",
+        "dynastyBucket": "其他",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "陕北秧歌",
+        "dynasty": "明代中叶",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "华剧",
+        "dynasty": "1983",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "端公戏",
+        "dynasty": "明代",
+        "dynastyBucket": "明代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "西府道情戏",
+        "dynasty": "清乾隆年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "安康道情",
+        "dynasty": "清末",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "长安道情",
+        "dynasty": "1956",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "安康越调（安康、旬阳、平利）",
+        "dynasty": "清光绪年间",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "歌舞剧",
+        "dynasty": "20世纪40年代",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "舞剧",
+        "dynasty": "20世纪50年代",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "话剧",
+        "dynasty": "20世纪30年代初",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "歌剧",
+        "dynasty": "20世纪40年代",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "延安秧歌剧",
+        "dynasty": "1943",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "紫阳民歌剧",
+        "dynasty": "1958",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "未计入"
+      },
+      {
+        "name": "花鼓戏",
+        "dynasty": "清代",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "未计入"
+      }
+    ]
+  },
+  "黑龙江": {
+    "dynastyDistribution": {
+      "dynasties": [
+        "元代",
+        "明代",
+        "清代",
+        "近现代"
+      ],
+      "counts": [
+        0,
+        0,
+        2,
+        3
+      ]
+    },
+    "operas": [
+      {
+        "name": "望奎县皮影戏",
+        "dynasty": "清光绪二十六年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "龙江皮影戏",
+        "dynasty": "民国初",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "龙江剧",
+        "dynasty": "1960年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ],
+    "allOperas": [
+      {
+        "name": "望奎县皮影戏",
+        "dynasty": "清光绪二十六年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "国家级"
+      },
+      {
+        "name": "龙江皮影戏",
+        "dynasty": "民国初",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "龙江剧",
+        "dynasty": "1960年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "省级"
+      },
+      {
+        "name": "龙滨戏",
+        "dynasty": "1964年",
+        "dynastyBucket": "近现代",
+        "isICH": true,
+        "level": "市级"
+      },
+      {
+        "name": "双城皮影戏",
+        "dynasty": "清乾隆41年",
+        "dynastyBucket": "清代",
+        "isICH": true,
+        "level": "省级"
+      }
+    ]
+  }
+}

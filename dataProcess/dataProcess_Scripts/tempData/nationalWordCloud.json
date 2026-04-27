@@ -1,0 +1,406 @@
+{
+  "全国": {
+    "wordCloud": [
+      {
+        "name": "哈哈哈",
+        "value": 2616
+      },
+      {
+        "name": "啊啊啊",
+        "value": 441
+      },
+      {
+        "name": "红娘",
+        "value": 425
+      },
+      {
+        "name": "可爱",
+        "value": 421
+      },
+      {
+        "name": "川剧",
+        "value": 392
+      },
+      {
+        "name": "素素",
+        "value": 356
+      },
+      {
+        "name": "生日快乐",
+        "value": 332
+      },
+      {
+        "name": "陆沉",
+        "value": 317
+      },
+      {
+        "name": "好看",
+        "value": 309
+      },
+      {
+        "name": "许仙",
+        "value": 303
+      },
+      {
+        "name": "小青",
+        "value": 294
+      },
+      {
+        "name": "这么",
+        "value": 285
+      },
+      {
+        "name": "喜欢",
+        "value": 273
+      },
+      {
+        "name": "高能",
+        "value": 271
+      },
+      {
+        "name": "前方",
+        "value": 261
+      },
+      {
+        "name": "好听",
+        "value": 260
+      },
+      {
+        "name": "张生",
+        "value": 235
+      },
+      {
+        "name": "看好",
+        "value": 219
+      },
+      {
+        "name": "愿意",
+        "value": 203
+      },
+      {
+        "name": "厉害",
+        "value": 178
+      },
+      {
+        "name": "京剧",
+        "value": 159
+      },
+      {
+        "name": "这是",
+        "value": 150
+      },
+      {
+        "name": "开始",
+        "value": 135
+      },
+      {
+        "name": "陈世美",
+        "value": 134
+      },
+      {
+        "name": "戏曲",
+        "value": 133
+      },
+      {
+        "name": "驸马",
+        "value": 132
+      },
+      {
+        "name": "四川话",
+        "value": 131
+      },
+      {
+        "name": "字幕",
+        "value": 129
+      },
+      {
+        "name": "漂亮",
+        "value": 128
+      },
+      {
+        "name": "打打",
+        "value": 122
+      },
+      {
+        "name": "衣服",
+        "value": 119
+      },
+      {
+        "name": "白蛇",
+        "value": 116
+      },
+      {
+        "name": "不能",
+        "value": 116
+      },
+      {
+        "name": "法海",
+        "value": 115
+      },
+      {
+        "name": "你好",
+        "value": 113
+      },
+      {
+        "name": "相爷",
+        "value": 112
+      },
+      {
+        "name": "时候",
+        "value": 109
+      },
+      {
+        "name": "表情",
+        "value": 109
+      },
+      {
+        "name": "一下",
+        "value": 109
+      },
+      {
+        "name": "国太",
+        "value": 109
+      },
+      {
+        "name": "是不是",
+        "value": 107
+      },
+      {
+        "name": "妈呀",
+        "value": 103
+      },
+      {
+        "name": "已经",
+        "value": 102
+      },
+      {
+        "name": "赵飞",
+        "value": 99
+      },
+      {
+        "name": "逆水",
+        "value": 99
+      },
+      {
+        "name": "姐姐",
+        "value": 97
+      },
+      {
+        "name": "声音",
+        "value": 96
+      },
+      {
+        "name": "娘娘",
+        "value": 94
+      },
+      {
+        "name": "青哥",
+        "value": 94
+      },
+      {
+        "name": "戏服",
+        "value": 94
+      },
+      {
+        "name": "杨波",
+        "value": 93
+      },
+      {
+        "name": "有人",
+        "value": 90
+      },
+      {
+        "name": "秦腔",
+        "value": 89
+      },
+      {
+        "name": "侍郎",
+        "value": 89
+      },
+      {
+        "name": "不要",
+        "value": 86
+      },
+      {
+        "name": "一起",
+        "value": 85
+      },
+      {
+        "name": "包拯",
+        "value": 85
+      },
+      {
+        "name": "公主",
+        "value": 84
+      },
+      {
+        "name": "拱火",
+        "value": 84
+      },
+      {
+        "name": "皇帝",
+        "value": 83
+      },
+      {
+        "name": "杨侍郎",
+        "value": 83
+      },
+      {
+        "name": "好帅",
+        "value": 82
+      },
+      {
+        "name": "晋剧",
+        "value": 82
+      },
+      {
+        "name": "儿子",
+        "value": 79
+      },
+      {
+        "name": "版本",
+        "value": 79
+      },
+      {
+        "name": "直接",
+        "value": 78
+      },
+      {
+        "name": "好好看",
+        "value": 77
+      },
+      {
+        "name": "经典",
+        "value": 76
+      },
+      {
+        "name": "小姐",
+        "value": 75
+      },
+      {
+        "name": "老夫",
+        "value": 75
+      },
+      {
+        "name": "只是",
+        "value": 75
+      },
+      {
+        "name": "眼神",
+        "value": 73
+      },
+      {
+        "name": "白蛇传",
+        "value": 72
+      },
+      {
+        "name": "那么",
+        "value": 72
+      },
+      {
+        "name": "眼睛",
+        "value": 72
+      },
+      {
+        "name": "一段",
+        "value": 72
+      },
+      {
+        "name": "妈妈",
+        "value": 72
+      },
+      {
+        "name": "孩子",
+        "value": 71
+      },
+      {
+        "name": "不会",
+        "value": 70
+      },
+      {
+        "name": "四川",
+        "value": 69
+      },
+      {
+        "name": "白娘子",
+        "value": 69
+      },
+      {
+        "name": "原来",
+        "value": 69
+      },
+      {
+        "name": "国公",
+        "value": 69
+      },
+      {
+        "name": "白脸",
+        "value": 68
+      },
+      {
+        "name": "大家",
+        "value": 67
+      },
+      {
+        "name": "传承",
+        "value": 67
+      },
+      {
+        "name": "不错",
+        "value": 67
+      },
+      {
+        "name": "嗓子",
+        "value": 67
+      },
+      {
+        "name": "来看",
+        "value": 66
+      },
+      {
+        "name": "听戏",
+        "value": 66
+      },
+      {
+        "name": "女儿",
+        "value": 66
+      },
+      {
+        "name": "联动",
+        "value": 66
+      },
+      {
+        "name": "逆子",
+        "value": 66
+      },
+      {
+        "name": "伯伯",
+        "value": 65
+      },
+      {
+        "name": "呜呜",
+        "value": 65
+      },
+      {
+        "name": "你们好",
+        "value": 63
+      },
+      {
+        "name": "老公",
+        "value": 63
+      },
+      {
+        "name": "千岁",
+        "value": 63
+      },
+      {
+        "name": "这种",
+        "value": 62
+      },
+      {
+        "name": "太好了",
+        "value": 62
+      }
+    ]
+  }
+}
