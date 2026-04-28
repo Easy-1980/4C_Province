@@ -9,7 +9,7 @@ from .audience_utils import analyze_tgi, build_audience_sections
 from .common_utils import find_column, read_csv, read_excel, read_json, write_json
 from .opera_utils import build_opera_sections
 from .qwen_utils import load_qwen_ask_func, qwen_cooldown
-from .radar_utils import DIMENSIONS, build_radar_sections
+from .radar_utils import DIMENSIONS, build_radar_sections, normalize_radar_payload
 from .score_utils import (
     build_national_opera_count_score_ai,
     build_province_opera_count_score_compare,
@@ -30,13 +30,20 @@ VIDEO_ALIASES = {
 
 COMMENTS_ALIASES = {
     "bvid": ["BV号", "bvid", "BVID", "bv"],
-    "content": ["评论内容", "comment", "content"],
+    "content": ["评论内容", "comment", "content", "message", "text"],
 }
 
 DANMAKU_ALIASES = {
     "bvid": ["BV号", "bvid", "BVID", "bv"],
     "text": ["弹幕内容", "弹幕文本", "danmaku", "content", "text"],
 }
+
+INVALID_PROVINCE_NAMES = {"", "全国", "未知", "未知省份", "nan", "none", "None"}
+
+
+def _is_valid_province_name(value: Any) -> bool:
+    text = str(value).strip()
+    return bool(text) and text not in INVALID_PROVINCE_NAMES
 
 
 def _canonicalize_video_df(df: pd.DataFrame) -> pd.DataFrame:
@@ -48,10 +55,10 @@ def _canonicalize_video_df(df: pd.DataFrame) -> pd.DataFrame:
     opera_col = find_column(df, VIDEO_ALIASES["opera"])
 
     data = pd.DataFrame()
-    data["bvid"] = df[bvid_col].astype(str).str.strip()
+    data["bvid"] = df[bvid_col].astype(str).str.strip().str.upper()
     data["province"] = df[province_col].astype(str).str.strip() if province_col is not None else ""
     data["opera"] = df[opera_col].astype(str).str.strip() if opera_col is not None else ""
-    data["province"] = data["province"].replace({"nan": "", "None": "", "none": ""})
+    data["province"] = data["province"].replace({"nan": "", "None": "", "none": "", "全国": ""})
     data["opera"] = data["opera"].replace({"nan": "", "None": "", "none": ""})
     data = data[data["bvid"].ne("")].copy()
     data = data.drop_duplicates(subset=["bvid"], keep="first").reset_index(drop=True)
@@ -65,8 +72,9 @@ def _canonicalize_comments_df(df: pd.DataFrame) -> pd.DataFrame:
         return pd.DataFrame(columns=["bvid", "content"])
 
     data = pd.DataFrame()
-    data["bvid"] = df[bvid_col].astype(str).str.strip()
+    data["bvid"] = df[bvid_col].astype(str).str.strip().str.upper()
     data["content"] = df[content_col].astype(str).str.strip() if content_col is not None else ""
+    data["content"] = data["content"].replace({"nan": "", "None": "", "none": ""})
     data = data[data["bvid"].ne("")].copy()
     return data
 
@@ -78,7 +86,7 @@ def _canonicalize_danmaku_df(df: pd.DataFrame) -> pd.DataFrame:
         return pd.DataFrame(columns=["bvid", "text"])
 
     data = pd.DataFrame()
-    data["bvid"] = df[bvid_col].astype(str).str.strip()
+    data["bvid"] = df[bvid_col].astype(str).str.strip().str.upper()
     data["text"] = df[text_col].astype(str).str.strip() if text_col is not None else ""
     data = data[data["bvid"].ne("")].copy()
     return data
@@ -109,6 +117,7 @@ def build_dashboard_data(
     map_data, opera_province_data = build_opera_sections(all_operas_df)
     audience_province_data, national_audience, national_tgi = build_audience_sections(audience_df)
     national_radar, province_radar = build_radar_sections(video_df, comments_df)
+    national_radar = normalize_radar_payload(national_radar)
     national_word_cloud = build_word_cloud(danmaku_df, top_n=100)
     province_word_clouds = build_province_word_clouds(danmaku_df, video_df, top_n=100)
 
@@ -145,20 +154,21 @@ def build_dashboard_data(
     province_avg_scores = [float(stat["avgScore"]) for stat in province_score_stats.values() if int(stat["videoCount"]) > 0]
     avg_low, avg_high, _ = compute_thresholds(province_avg_scores)
 
-    all_provinces = sorted(
+    all_provinces_raw = sorted(
         set(opera_province_data.keys())
         | set(audience_province_data.keys())
         | set(province_radar.keys())
         | set(province_word_clouds.keys())
         | set(province_score_stats.keys())
     )
+    all_provinces = [str(p).strip() for p in all_provinces_raw if _is_valid_province_name(p)]
 
     province_output: Dict[str, Dict[str, Any]] = {}
     default_radar = {"dimensions": [item["name"] for item in DIMENSIONS], "scores": [60, 60, 60, 60, 60, 60]}
     for province in all_provinces:
         opera_part = opera_province_data.get(province, {"operaCount": 0, "operas": [], "heritageLevel": {}, "originDynasty": {}})
         audience_part = audience_province_data.get(province, {"audiencePortrait": {}, "tgi": []})
-        radar_part = province_radar.get(province, default_radar)
+        radar_part = normalize_radar_payload(province_radar.get(province, default_radar))
         word_cloud_part = province_word_clouds.get(province, [])
         score_part = province_score_stats.get(province, {"scores": [], "avgScore": 0.0, "videoCount": 0})
         tgi_part = audience_part.get("tgi", [])
@@ -200,18 +210,25 @@ def build_dashboard_data(
             "spreadStructure": spread_structure,
         }
 
+    for province_name, province_payload in province_output.items():
+        radar_payload = province_payload.get("radarScores", default_radar)
+        province_payload["radarScores"] = normalize_radar_payload(radar_payload)
+        province_output[province_name] = province_payload
+
+    national_payload = {
+        "mapData": map_data,
+        "provinceScoreTop10": province_score_top10,
+        "provinceOperaCountScoreCompare": compare_top10,
+        "operaCountScoreAI": opera_count_score_ai,
+        "wordCloud": national_word_cloud,
+        "radarScores": normalize_radar_payload(national_radar),
+        "audiencePortrait": national_audience,
+        "tgi": national_tgi,
+        "tgiAnalysis": national_tgi_analysis,
+    }
+
     output = {
-        "national": {
-            "mapData": map_data,
-            "provinceScoreTop10": province_score_top10,
-            "provinceOperaCountScoreCompare": compare_top10,
-            "operaCountScoreAI": opera_count_score_ai,
-            "wordCloud": national_word_cloud,
-            "radarScores": national_radar,
-            "audiencePortrait": national_audience,
-            "tgi": national_tgi,
-            "tgiAnalysis": national_tgi_analysis,
-        },
+        "national": national_payload,
         "provinces": province_output,
     }
 

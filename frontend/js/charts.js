@@ -137,10 +137,39 @@ function updateLeftTopChart(provinceName, data) {
 
 function updateRadarChart(provinceName, data) {
     const safeData = data && typeof data === 'object' ? data : {};
-    const radarData = Array.isArray(safeData.radarData) ? safeData.radarData : [60, 60, 60, 60, 60, 60];
+    const fallbackDimensions = [
+        "服化道审美",
+        "二创与整活",
+        "名场面打卡",
+        "传统文化底蕴",
+        "剧情与价值观",
+        "唱腔与身段"
+    ];
+    const radarObj = safeData.radarScores && typeof safeData.radarScores === 'object'
+        ? safeData.radarScores
+        : {};
+    const dimensionsRaw = Array.isArray(radarObj.dimensions) ? radarObj.dimensions : [];
+    const normalizedDimensions = dimensionsRaw.map(name => String(name || '').trim()).filter(Boolean);
+    const dimensions = normalizedDimensions.length === fallbackDimensions.length
+        ? normalizedDimensions
+        : fallbackDimensions.slice();
+
+    const scoresRaw = Array.isArray(radarObj.scores)
+        ? radarObj.scores
+        : (Array.isArray(safeData.radarData) ? safeData.radarData : []);
+    const normalizedScores = scoresRaw.map(v => {
+        const num = Number(v);
+        return Number.isFinite(num) ? Math.max(0, Math.min(100, num)) : 60;
+    });
+    const radarData = normalizedScores.length === dimensions.length
+        ? normalizedScores
+        : [60, 60, 60, 60, 60, 60];
+
+    const indicator = dimensions.map(name => ({ name, max: 100 }));
     document.querySelector('#chart-left-bottom').previousElementSibling.innerText = `${provinceName} - 代表剧种受众关注维度`;
     myChartLeftBottom.setOption({
-        series: [{ data: [{ value: radarData, name: `${provinceName}受众特征`, itemStyle: { color: '#00eaff', borderColor: '#fff', borderWidth: 1 }, areaStyle: { color: new echarts.graphic.RadialGradient(0.5, 0.5, 1, [{ color: 'rgba(0, 234, 255, 0.1)', offset: 0 }, { color: 'rgba(0, 234, 255, 0.6)', offset: 1 }]) } }] }]
+        radar: { indicator: indicator },
+        series: [{ type: 'radar', data: [{ value: radarData, name: `${provinceName}受众特征`, itemStyle: { color: '#00eaff', borderColor: '#fff', borderWidth: 1 }, areaStyle: { color: new echarts.graphic.RadialGradient(0.5, 0.5, 1, [{ color: 'rgba(0, 234, 255, 0.1)', offset: 0 }, { color: 'rgba(0, 234, 255, 0.6)', offset: 1 }]) } }] }]
     });
 }
 

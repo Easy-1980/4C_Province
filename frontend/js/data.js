@@ -15,6 +15,14 @@ let globalScatterData = [];
 
 // 提取主题色系
 const themeColors = ['#00eaff', '#0075ff', '#ffb020', '#ff4d4f', '#00ffaa'];
+const radarDimensionDefaults = [
+    "服化道审美",
+    "二创与整活",
+    "名场面打卡",
+    "传统文化底蕴",
+    "剧情与价值观",
+    "唱腔与身段"
+];
 
 // 地图坐标与名称映射字典
 const geoCoordMap = {
@@ -85,6 +93,12 @@ const getRadarScores = (radarObj) => {
     const scores = radarObj && Array.isArray(radarObj.scores) ? radarObj.scores : [];
     if (!scores.length) return [60, 60, 60, 60, 60, 60];
     return scores.map(v => toNumber(v, 60));
+};
+
+const getRadarDimensions = (radarObj) => {
+    const dims = radarObj && Array.isArray(radarObj.dimensions) ? radarObj.dimensions : [];
+    const clean = dims.map(v => String(v || '').trim()).filter(Boolean);
+    return clean.length === radarDimensionDefaults.length ? clean : radarDimensionDefaults.slice();
 };
 
 const buildLegacyTgiData = (audiencePortrait, tgiList, tgiAnalysis) => {
@@ -270,6 +284,10 @@ const buildLegacyProvinceData = (dashboardData, videoAnalysisData) => {
         mapData: mapData,
         topProvinces: buildTopProvinceData(mapData),
         wordCloud: nationalWordCloud,
+        radarScores: {
+            dimensions: getRadarDimensions(nationalRaw.radarScores),
+            scores: getRadarScores(nationalRaw.radarScores)
+        },
         radarData: getRadarScores(nationalRaw.radarScores),
         ageGender: nationalAudience.ageGender && typeof nationalAudience.ageGender === 'object'
             ? nationalAudience.ageGender
@@ -316,6 +334,10 @@ const buildLegacyProvinceData = (dashboardData, videoAnalysisData) => {
                 counts: dynastyCounts
             },
             wordCloud: normalizeWordCloudItems(raw.wordCloud),
+            radarScores: {
+                dimensions: getRadarDimensions(raw.radarScores),
+                scores: getRadarScores(raw.radarScores)
+            },
             radarData: getRadarScores(raw.radarScores),
             ageGender: audiencePortrait.ageGender && typeof audiencePortrait.ageGender === 'object'
                 ? audiencePortrait.ageGender
