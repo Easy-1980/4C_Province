@@ -28,10 +28,19 @@ document.getElementById('danmaku-modal').addEventListener('click', function(e) {
 
 // TGI 画像深度分析弹窗
 window.openTgiModal = function() {
-    const provinceData = globalProvinceData[currentActiveProvince];
+    const provinceData = globalProvinceData[currentActiveProvince] || {};
     
     if (provinceData && provinceData.tgiData) {
-        const tgiData = provinceData.tgiData;
+        const tgiDataRaw = provinceData.tgiData || {};
+        const tgiData = {
+            analysis: String(tgiDataRaw.analysis || '暂无分析'),
+            age: tgiDataRaw.age && typeof tgiDataRaw.age === 'object'
+                ? tgiDataRaw.age
+                : { categories: [], percent: [], tgi: [] },
+            gender: tgiDataRaw.gender && typeof tgiDataRaw.gender === 'object'
+                ? tgiDataRaw.gender
+                : { categories: ['男性', '女性'], percent: [0, 0], tgi: [0, 0] }
+        };
         
         // 直接填充你原本 HTML 里写好的文本框
         document.getElementById('tgi-modal-title').innerText = currentActiveProvince;

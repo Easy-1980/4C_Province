@@ -1,27 +1,57 @@
 // 1.核心数据并发加载引擎
 myChartMap.showLoading({ text: '核心数据融合加载中...', color: '#ffb020', textColor: '#fff', maskColor: 'rgba(6, 13, 31, 0.8)' });
 
+const fetchJsonWithFallback = async (paths) => {
+    let lastError = null;
+    for (const path of paths) {
+        try {
+            const resp = await fetch(path);
+            if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+            return await resp.json();
+        } catch (err) {
+            lastError = err;
+        }
+    }
+    throw lastError || new Error('JSON 加载失败');
+};
+
 Promise.all([
-    fetch('data/Province_data.json').then(res => res.json()),
-    fetch('data/China.geojson').then(res => res.json()),
-    fetch('data/danmakuWordAnalysis.json').then(res => res.json()).catch(() => ({}))
-]).then(([provinceData, geoJson, wordAnalysisData]) => {
+    fetchJsonWithFallback([
+        '../dataProcess/output/dashboard_data.json',
+        '/dataProcess/output/dashboard_data.json',
+        'dataProcess/output/dashboard_data.json'
+    ]),
+    fetchJsonWithFallback([
+        '../dataProcess/output/video_analysis.json',
+        '/dataProcess/output/video_analysis.json',
+        'dataProcess/output/video_analysis.json'
+    ]),
+    fetch('data/China.geojson').then(res => res.json())
+]).then(([dashboardData, videoAnalysisData, geoJson]) => {
     myChartMap.hideLoading();
+
+    // 保留原始 JSON，供图表层兜底读取
+    globalDashboardData = dashboardData && typeof dashboardData === 'object' ? dashboardData : {};
+    globalVideoAnalysisData = videoAnalysisData && typeof videoAnalysisData === 'object' ? videoAnalysisData : {};
     
-    // 注入全局变量
-    globalProvinceData = provinceData;
-    globalWordAnalysis = wordAnalysisData;
+    // 适配新 JSON 到当前静态页原有字段结构
+    globalProvinceData = buildLegacyProvinceData(globalDashboardData, globalVideoAnalysisData);
+    const nationalData = globalProvinceData['全国'] || {};
+    const nationalRaw = globalDashboardData.national || {};
+    const fallbackWordCloud = normalizeWordCloudItems(nationalRaw.wordCloud || []);
+    const wordCloudForAnalysis = (nationalData.wordCloud && nationalData.wordCloud.length)
+        ? nationalData.wordCloud
+        : fallbackWordCloud;
+    globalWordAnalysis = buildWordAnalysisIndex(wordCloudForAnalysis);
 
     // 1. 渲染地图
     renderMap(geoJson);
 
     // 2. 初始化大盘图表
-    if (globalProvinceData['全国']) {
-        updateLeftTopChart('全国', globalProvinceData['全国']);
-        updateRightTopChart('全国', globalProvinceData['全国']);
-        updateRadarChart('全国', globalProvinceData['全国']);
-        updateBarChart('全国', globalProvinceData['全国']);
-    }
+    updateLeftTopChart('全国', nationalData);
+    updateRightTopChart('全国', nationalData);
+    updateRadarChart('全国', nationalData);
+    updateBarChart('全国', nationalData);
 }).catch(err => {
     console.error('系统数据源加载失败，请检查文件路径！', err);
     myChartMap.hideLoading();
@@ -86,18 +116,20 @@ myChartLeftTop.on('click', function (params) {
     let targetOperas = [];
 
     if (currentActiveProvince === '全国') {
-        const provData = globalProvinceData[clickName];
-        if (provData && provData.allOperas) {
-            modalTitle = `${clickName} - 全部收录剧种 <span style="font-size:16px;color:#a1b0c8">(${provData.allOperas.length} 个)</span>`;
-            targetOperas = provData.allOperas;
+        const provData = globalProvinceData[clickName] || {};
+        const allOperas = Array.isArray(provData.allOperas) ? provData.allOperas : [];
+        if (allOperas.length > 0) {
+            modalTitle = `${clickName} - 全部收录剧种 <span style="font-size:16px;color:#a1b0c8">(${allOperas.length} 个)</span>`;
+            targetOperas = allOperas;
         } else {
             alert(`正在抓取【${clickName}】的剧种数据，请稍后...`);
             return;
         }
     } else {
-        const provData = globalProvinceData[currentActiveProvince];
-        if (provData && provData.allOperas) {
-            targetOperas = provData.allOperas.filter(op => op.dynastyBucket === clickName);
+        const provData = globalProvinceData[currentActiveProvince] || {};
+        const allOperas = Array.isArray(provData.allOperas) ? provData.allOperas : [];
+        if (allOperas.length > 0) {
+            targetOperas = allOperas.filter(op => String(op && op.dynastyBucket || '') === String(clickName));
             modalTitle = `${currentActiveProvince} - ${clickName}起源剧种 <span style="font-size:16px;color:#a1b0c8">(${targetOperas.length} 个)</span>`;
         }
         if (targetOperas.length === 0) {
@@ -108,16 +140,19 @@ myChartLeftTop.on('click', function (params) {
 
     let listHtml = '';
     targetOperas.forEach((op, index) => {
-        const levelColor = op.level.includes('国家') || op.level.includes('世界') ? '#ff2277' : '#00eaff';
+        const opName = String(op && op.name || '未知剧种');
+        const opDynasty = String(op && op.dynasty || '未知');
+        const opLevel = String(op && op.level || '未计入');
+        const levelColor = opLevel.includes('国家') || opLevel.includes('世界') ? '#ff2277' : '#00eaff';
         listHtml += `
             <div class="opera-list-item">
                 <div class="opera-list-left">
                     <span class="opera-index">${index + 1}</span>
-                    <span class="opera-name">${op.name}</span>
-                    <span class="opera-time">(${op.dynasty})</span>
+                    <span class="opera-name">${opName}</span>
+                    <span class="opera-time">(${opDynasty})</span>
                 </div>
                 <div class="opera-list-right" style="color: ${levelColor}; border-color: ${levelColor}">
-                    ${op.level}非遗
+                    ${opLevel}非遗
                 </div>
             </div>`;
     });

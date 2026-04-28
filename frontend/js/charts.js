@@ -15,9 +15,28 @@ window.addEventListener('resize', () => {
 
 // 核心更新函数
 function updateRightTopChart(provinceName, data) {
+    const safeData = data && typeof data === 'object' ? data : {};
+    const rawNational = (globalDashboardData && globalDashboardData.national && typeof globalDashboardData.national === 'object')
+        ? globalDashboardData.national
+        : {};
     const titleEl = document.querySelector('#chart-right-top').previousElementSibling;
     if (provinceName === '全国') {
         titleEl.innerHTML = `${provinceName} - 剧目弹幕热点词云 <span style="font-size:10px; color:#ffb020;">(B站抓取)</span>`;
+        const rawWordCloud = (Array.isArray(rawNational.wordCloud) && rawNational.wordCloud.length)
+            ? rawNational.wordCloud
+            : (Array.isArray(safeData.wordCloud) ? safeData.wordCloud : []);
+        const wordCloudData = rawWordCloud.map(item => ({
+            name: String((item && (item.name || item.word)) || '').trim(),
+            value: Number((item && (item.value ?? item.count)) || 0),
+            word: String((item && (item.word || item.name)) || '').trim(),
+            count: Number((item && (item.count ?? item.value)) || 0),
+            sentiment: String((item && item.sentiment) || '中性'),
+            analysis: String((item && item.analysis) || '暂无分析'),
+            score: String((item && item.score) || '0.00')
+        }))
+            .filter(item => item.name && item.value > 0)
+            .sort((a, b) => b.value - a.value)
+            .slice(0, 15);
         myChartRightTop.setOption({
             tooltip: { show: true, trigger: 'item' },
             xAxis: { show: false }, yAxis: { show: false },
@@ -25,12 +44,17 @@ function updateRightTopChart(provinceName, data) {
                 type: 'wordCloud', shape: 'circle', left: 'center', top: 'center', width: '95%', height: '95%',
                 sizeRange: [20, 55], rotationRange: [-45, 45], gridSize: 8,
                 textStyle: { color: () => 'rgb(' + [Math.round(Math.random() * 150 + 100), Math.round(Math.random() * 150 + 100), 255].join(',') + ')' },
-                data: data.wordCloud
+                data: wordCloudData
             }]
         }, true);
     } else {
         titleEl.innerHTML = `${provinceName} - 代表剧目弹幕热点折线图 <span style="font-size:10px; color:#ffb020;">(B站抓取)</span>`;
-        const trendData = data.danmakuTrend || { operaName: '暂未录入代表剧目', times: ['00:00', '00:10', '00:20', '00:30'], counts: [0, 0, 0, 0] };
+        const trendDataRaw = safeData.danmakuTrend && typeof safeData.danmakuTrend === 'object' ? safeData.danmakuTrend : {};
+        const trendData = {
+            operaName: String(trendDataRaw.operaName || '暂未录入代表剧目'),
+            times: Array.isArray(trendDataRaw.times) ? trendDataRaw.times : ['00:00', '00:10', '00:20', '00:30'],
+            counts: Array.isArray(trendDataRaw.counts) ? trendDataRaw.counts : [0, 0, 0, 0]
+        };
         myChartRightTop.setOption({
             grid: { top: '25%', right: '8%', bottom: '15%', left: '15%' },
             tooltip: {
@@ -54,21 +78,42 @@ function updateRightTopChart(provinceName, data) {
 }
 
 function updateLeftTopChart(provinceName, data) {
+    const safeData = data && typeof data === 'object' ? data : {};
+    const rawNational = (globalDashboardData && globalDashboardData.national && typeof globalDashboardData.national === 'object')
+        ? globalDashboardData.national
+        : {};
     const panelTitle = document.querySelector('#chart-left-top').previousElementSibling;
     if (provinceName === '全国') {
         panelTitle.innerText = '全国剧种数量 Top 10 省份';
+        const mapData = (Array.isArray(rawNational.mapData) && rawNational.mapData.length)
+            ? rawNational.mapData
+            : (Array.isArray(safeData.mapData) ? safeData.mapData : []);
+        const top10 = mapData
+            .slice()
+            .sort((a, b) => Number(b && b.value || 0) - Number(a && a.value || 0))
+            .slice(0, 10)
+            .sort((a, b) => Number(a && a.value || 0) - Number(b && b.value || 0));
+        const topNames = top10.map(item => String(item && item.name || '').trim()).filter(Boolean);
+        const topValues = top10
+            .filter(item => String(item && item.name || '').trim())
+            .map(item => Number(item && item.value || 0));
         myChartLeftTop.setOption({
             grid: { top: '10%', right: '12%', bottom: '10%', left: '15%' },
             tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
             xAxis: { type: 'value', splitLine: { show: false }, axisLabel: { show: false } },
-            yAxis: { type: 'category', data: data.topProvinces.names, axisLabel: { color: '#a1b0c8' }, axisLine: { show: false }, axisTick: { show: false } },
+            yAxis: { type: 'category', data: topNames, axisLabel: { color: '#a1b0c8' }, axisLine: { show: false }, axisTick: { show: false } },
             series: [{
-                type: 'bar', data: data.topProvinces.values, label: { show: true, position: 'right', color: '#00eaff', fontSize: 11 },
+                type: 'bar', data: topValues, label: { show: true, position: 'right', color: '#00eaff', fontSize: 11 },
                 itemStyle: { color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [{ offset: 0, color: '#00eaff' }, { offset: 1, color: '#0075ff' }]), borderRadius: [0, 5, 5, 0] }
             }]
         }, true);
     } else {
         panelTitle.innerText = `${provinceName} - 代表剧种起源朝代分布`;
+        const dynasty = safeData.dynastyDistribution && typeof safeData.dynastyDistribution === 'object'
+            ? safeData.dynastyDistribution
+            : { dynasties: [], counts: [] };
+        const dynasties = Array.isArray(dynasty.dynasties) ? dynasty.dynasties : [];
+        const counts = Array.isArray(dynasty.counts) ? dynasty.counts : [];
         myChartLeftTop.setOption({
             grid: { top: '25%', right: '5%', bottom: '15%', left: '5%' }, 
             tooltip: {
@@ -80,28 +125,37 @@ function updateLeftTopChart(provinceName, data) {
                             <div style="display:flex; align-items:center;">${customMarker} <span style="color:#a1b0c8;">剧种数量：</span><span style="color:#00eaff; font-weight:bold; font-size: 16px; margin-left: 5px;">${data.value}</span></div>`;
                 }
             },
-            xAxis: { type: 'category', data: data.dynastyDistribution.dynasties, axisLabel: { color: '#a1b0c8', fontSize: 11, interval: 0, margin: 15 }, axisLine: { lineStyle: { color: 'rgba(255,255,255,0.1)' } }, axisTick: { show: false } },
+            xAxis: { type: 'category', data: dynasties, axisLabel: { color: '#a1b0c8', fontSize: 11, interval: 0, margin: 15 }, axisLine: { lineStyle: { color: 'rgba(255,255,255,0.1)' } }, axisTick: { show: false } },
             yAxis: { type: 'value', splitLine: { lineStyle: { color: 'rgba(255,255,255,0.05)', type: 'dashed' } }, axisLabel: { show: false } },
             series: [
-                { name: '剧种数量', type: 'scatter', symbol: 'circle', symbolSize: 12, data: data.dynastyDistribution.counts, itemStyle: { color: '#060d1f', borderColor: '#00eaff', borderWidth: 3, shadowBlur: 12, shadowColor: '#00eaff' }, label: { show: true, position: 'top', color: '#00eaff', fontSize: 16, fontWeight: 'bold', distance: 10 }, zlevel: 2 },
-                { name: '剧种数量', type: 'bar', barWidth: 2, data: data.dynastyDistribution.counts, itemStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: '#00eaff' }, { offset: 1, color: 'rgba(0, 234, 255, 0)' }]), borderRadius: 2 }, zlevel: 1 }
+                { name: '剧种数量', type: 'scatter', symbol: 'circle', symbolSize: 12, data: counts, itemStyle: { color: '#060d1f', borderColor: '#00eaff', borderWidth: 3, shadowBlur: 12, shadowColor: '#00eaff' }, label: { show: true, position: 'top', color: '#00eaff', fontSize: 16, fontWeight: 'bold', distance: 10 }, zlevel: 2 },
+                { name: '剧种数量', type: 'bar', barWidth: 2, data: counts, itemStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: '#00eaff' }, { offset: 1, color: 'rgba(0, 234, 255, 0)' }]), borderRadius: 2 }, zlevel: 1 }
             ]
         }, true);
     }
 }
 
 function updateRadarChart(provinceName, data) {
+    const safeData = data && typeof data === 'object' ? data : {};
+    const radarData = Array.isArray(safeData.radarData) ? safeData.radarData : [60, 60, 60, 60, 60, 60];
     document.querySelector('#chart-left-bottom').previousElementSibling.innerText = `${provinceName} - 代表剧种受众关注维度`;
     myChartLeftBottom.setOption({
-        series: [{ data: [{ value: data.radarData, name: `${provinceName}受众特征`, itemStyle: { color: '#00eaff', borderColor: '#fff', borderWidth: 1 }, areaStyle: { color: new echarts.graphic.RadialGradient(0.5, 0.5, 1, [{ color: 'rgba(0, 234, 255, 0.1)', offset: 0 }, { color: 'rgba(0, 234, 255, 0.6)', offset: 1 }]) } }] }]
+        series: [{ data: [{ value: radarData, name: `${provinceName}受众特征`, itemStyle: { color: '#00eaff', borderColor: '#fff', borderWidth: 1 }, areaStyle: { color: new echarts.graphic.RadialGradient(0.5, 0.5, 1, [{ color: 'rgba(0, 234, 255, 0.1)', offset: 0 }, { color: 'rgba(0, 234, 255, 0.6)', offset: 1 }]) } }] }]
     });
 }
 
 function updateBarChart(provinceName, data) {
+    const safeData = data && typeof data === 'object' ? data : {};
+    const ageGender = safeData.ageGender && typeof safeData.ageGender === 'object'
+        ? safeData.ageGender
+        : { categories: [], male: [], female: [] };
+    const categories = Array.isArray(ageGender.categories) ? ageGender.categories : [];
+    const male = Array.isArray(ageGender.male) ? ageGender.male : [];
+    const female = Array.isArray(ageGender.female) ? ageGender.female : [];
     document.querySelector('#chart-right-bottom').previousElementSibling.innerHTML = `${provinceName} - 代表剧种受众画像 <span style="font-size:10px; color:#ffb020; cursor:pointer;" onclick="window.openTgiModal()">[点击查看TGI详情]</span>`;
     myChartRightBottom.setOption({
-        yAxis: { data: data.ageGender.categories },
-        series: [ { name: '男性', data: data.ageGender.male }, { name: '女性', data: data.ageGender.female } ]
+        yAxis: { data: categories },
+        series: [ { name: '男性', data: male }, { name: '女性', data: female } ]
     });
 }
 
@@ -111,19 +165,27 @@ function renderMap(geoJson) {
     const mapData = [];     
     globalScatterData = []; 
     let maxOperaCount = 0;
-
-    for (const prov in globalProvinceData) {
-        if (prov !== '全国' && globalProvinceData[prov].allOperas) {
-            const count = globalProvinceData[prov].allOperas.length;
-            const fullName = getMapFullName(prov);
-            mapData.push({ name: fullName, value: count });
-            
-            if (geoCoordMap[prov]) {
-                globalScatterData.push({ name: prov, value: [...geoCoordMap[prov], count] });
-            }
-            if (count > maxOperaCount) maxOperaCount = count;
+    const nationalData = globalProvinceData['全国'] || {};
+    const rawNational = (globalDashboardData && globalDashboardData.national && typeof globalDashboardData.national === 'object')
+        ? globalDashboardData.national
+        : {};
+    const nationalMapData = (Array.isArray(rawNational.mapData) && rawNational.mapData.length)
+        ? rawNational.mapData
+        : (Array.isArray(nationalData.mapData) ? nationalData.mapData : []);
+    const sourceMapData = nationalMapData.length ? nationalMapData : Object.keys(globalProvinceData)
+        .filter(name => name !== '全国')
+        .map(name => ({ name: name, value: Number(globalProvinceData[name] && globalProvinceData[name].operaCount || 0) }));
+    sourceMapData.forEach(item => {
+        const shortName = getShortProvinceName(item && item.name);
+        if (!shortName) return;
+        const count = Number(item && item.value || 0);
+        const fullName = getMapFullName(shortName);
+        mapData.push({ name: fullName, value: count });
+        if (geoCoordMap[shortName]) {
+            globalScatterData.push({ name: shortName, value: [...geoCoordMap[shortName], count] });
         }
-    }
+        if (count > maxOperaCount) maxOperaCount = count;
+    });
     const heatmapMax = Math.max(10, maxOperaCount);
 
     const optionMap = {
@@ -132,12 +194,22 @@ function renderMap(geoJson) {
             trigger: 'item', backgroundColor: 'rgba(6, 13, 31, 0.9)', borderColor: '#ffb020', textStyle: { color: '#fff' }, padding: 15,
             formatter: function (params) {
                 let shortName = params.name.replace(/省|市|维吾尔自治区|壮族自治区|回族自治区|自治区|特别行政区/g, '');
-                const provinceData = globalProvinceData[shortName];
-                if (!provinceData || !provinceData.operas || provinceData.operas.length === 0) {
-                    return `<div style="font-size: 16px; color: #ffb020;">${params.name} <br><span style="font-size: 12px; color: #a1b0c8;">暂未收录核心剧种数据</span></div>`;
+                const provinceData = globalProvinceData[shortName] || {};
+                const operaListRaw = Array.isArray(provinceData.operas) ? provinceData.operas : [];
+                const operaList = operaListRaw.map(op => {
+                    if (typeof op === 'string') return { name: op, dynasty: '未知', level: '未计入' };
+                    return {
+                        name: String(op && op.name || '未知剧种'),
+                        dynasty: String(op && op.dynasty || '未知'),
+                        level: String(op && op.level || '未计入')
+                    };
+                });
+                if (operaList.length === 0) {
+                    const count = Number(params.value || provinceData.operaCount || 0);
+                    return `<div style="font-size: 16px; color: #ffb020;">${params.name} <br><span style="font-size: 12px; color: #a1b0c8;">剧种数量：${count}</span></div>`;
                 }
                 let html = `<div style="min-width: 300px;"><div style="font-size: 18px; color: #ffb020; font-weight: bold; border-bottom: 1px solid rgba(255, 176, 32, 0.3); padding-bottom: 10px; margin-bottom: 15px;">${params.name} <span style="font-size: 14px; color: #a1b0c8; font-weight: normal;">| 核心代表剧种</span></div>`;
-                provinceData.operas.slice(0, 3).forEach((opera, index) => {
+                operaList.slice(0, 3).forEach((opera, index) => {
                     let levelColor = opera.level.includes('国家') || opera.level.includes('世界') ? '#ff2277' : '#ffb020';
                     html += `<div style="display: flex; align-items: center; margin-bottom: 12px; width: 100%;">
                                 <div style="width: 22px; height: 22px; background: #ff4d4d; color: #fff; text-align: center; line-height: 22px; border-radius: 50%; font-size: 12px; margin-right: 10px; flex-shrink: 0;">${index + 1}</div>
@@ -146,7 +218,7 @@ function renderMap(geoJson) {
                                 <div style="border: 1px solid ${levelColor}; color: ${levelColor}; padding: 2px 6px; border-radius: 4px; font-size: 12px; white-space: nowrap; flex-shrink: 0; margin-left: 15px;">${opera.level}非遗</div>
                             </div>`;
                 });
-                if (provinceData.operas.length > 3) html += `<div style="color: #a1b0c8; font-size: 12px; text-align: center; margin-top: 10px; border-top: 1px dashed rgba(161, 176, 200, 0.3); padding-top: 10px;">(仅展示前 3 个代表剧种)</div>`;
+                if (operaList.length > 3) html += `<div style="color: #a1b0c8; font-size: 12px; text-align: center; margin-top: 10px; border-top: 1px dashed rgba(161, 176, 200, 0.3); padding-top: 10px;">(仅展示前 3 个代表剧种)</div>`;
                 html += `</div>`;
                 return html;
             }
