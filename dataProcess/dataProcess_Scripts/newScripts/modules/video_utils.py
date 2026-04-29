@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import re
 from collections import Counter
 from pathlib import Path
@@ -31,7 +32,7 @@ VIDEO_ALIASES = {
     "like": ["点赞数", "like", "likes"],
     "coin": ["投币数", "coin"],
     "favorite": ["收藏数", "favorite", "favorites"],
-    "comment": ["评论数", "reply", "comment", "comments", "评论总数"],
+    "comment_sample_count": ["评论样本数", "commentSampleCount"],
     "danmaku": ["弹幕总量", "弹幕总数", "danmaku", "danmaku_count", "danmakuCount"],
 }
 
@@ -61,7 +62,7 @@ def _canonicalize_video_df(df: pd.DataFrame) -> pd.DataFrame:
         data[col] = data[col].astype(str).str.strip()
         data[col] = data[col].replace({"nan": "", "None": "", "none": ""})
 
-    numeric_cols = ["view", "like", "coin", "favorite", "comment", "danmaku"]
+    numeric_cols = ["view", "like", "coin", "favorite", "comment_sample_count", "danmaku"]
     for col in numeric_cols:
         data[col] = to_numeric(data[col])
 
@@ -107,6 +108,30 @@ def _min_max_normalize(series: pd.Series) -> pd.Series:
     return (series - min_val) / (max_val - min_val)
 
 
+def _log1p_min_max_normalize(series: pd.Series) -> pd.Series:
+    safe = series.fillna(0.0).astype(float).clip(lower=0.0).map(math.log1p)
+    return _min_max_normalize(safe)
+
+
+def _compute_score_thresholds(values: pd.Series) -> tuple[float, float]:
+    clean = values.dropna().astype(float)
+    if len(clean) < 5:
+        return 50.0, 70.0
+    low = float(clean.quantile(0.33))
+    high = float(clean.quantile(0.66))
+    if low >= high:
+        return 50.0, 70.0
+    return low, high
+
+
+def _score_level(value: float, low: float, high: float) -> str:
+    if value >= high:
+        return "强传播"
+    if value >= low:
+        return "中等传播"
+    return "弱传播"
+
+
 def _fill_count_by_detail(base_df: pd.DataFrame, detail_df: pd.DataFrame, target_col: str) -> None:
     if detail_df.empty:
         return
@@ -117,19 +142,17 @@ def _fill_count_by_detail(base_df: pd.DataFrame, detail_df: pd.DataFrame, target
 
 def _calculate_indexes(df: pd.DataFrame) -> pd.DataFrame:
     result = df.copy()
-    view_norm = _min_max_normalize(result["view"])
-    like_norm = _min_max_normalize(result["like"])
-    favorite_norm = _min_max_normalize(result["favorite"])
-    coin_norm = _min_max_normalize(result["coin"])
-    comment_norm = _min_max_normalize(result["comment"])
-    danmaku_norm = _min_max_normalize(result["danmaku"])
+    view_norm = _log1p_min_max_normalize(result["view"])
+    like_norm = _log1p_min_max_normalize(result["like"])
+    favorite_norm = _log1p_min_max_normalize(result["favorite"])
+    coin_norm = _log1p_min_max_normalize(result["coin"])
+    danmaku_norm = _log1p_min_max_normalize(result["danmaku"])
     spread_heat = (
         0.35 * view_norm
-        + 0.20 * like_norm
+        + 0.25 * like_norm
         + 0.15 * favorite_norm
         + 0.15 * coin_norm
-        + 0.10 * comment_norm
-        + 0.05 * danmaku_norm
+        + 0.10 * danmaku_norm
     )
     result["spreadHeat"] = (spread_heat * 100).round(1)
 
@@ -137,16 +160,22 @@ def _calculate_indexes(df: pd.DataFrame) -> pd.DataFrame:
     like_rate = (result["like"] / view_safe).fillna(0.0)
     coin_rate = (result["coin"] / view_safe).fillna(0.0)
     favorite_rate = (result["favorite"] / view_safe).fillna(0.0)
-    comment_rate = (result["comment"] / view_safe).fillna(0.0)
     danmaku_rate = (result["danmaku"] / view_safe).fillna(0.0)
-    interaction_quality = (
-        0.25 * _min_max_normalize(like_rate)
-        + 0.20 * _min_max_normalize(coin_rate)
-        + 0.20 * _min_max_normalize(favorite_rate)
-        + 0.20 * _min_max_normalize(comment_rate)
-        + 0.15 * _min_max_normalize(danmaku_rate)
+    interaction_quality_raw = (
+        0.30 * _min_max_normalize(like_rate)
+        + 0.25 * _min_max_normalize(coin_rate)
+        + 0.25 * _min_max_normalize(favorite_rate)
+        + 0.20 * _min_max_normalize(danmaku_rate)
     )
-    result["interactionQuality"] = (interaction_quality * 100).round(1)
+    view_conf_denom = math.log1p(10000.0)
+    view_confidence = (
+        result["view"]
+        .fillna(0.0)
+        .astype(float)
+        .clip(lower=0.0)
+        .map(lambda x: min(1.0, math.log1p(x) / view_conf_denom if view_conf_denom > 0 else 0.0))
+    )
+    result["interactionQuality"] = (interaction_quality_raw * view_confidence * 100).round(1)
     result["score"] = (0.6 * result["spreadHeat"] + 0.4 * result["interactionQuality"]).round(1)
     return result
 
@@ -237,6 +266,7 @@ def _build_qwen_prompt(
     bvid: str,
     title: str,
     stats: Dict[str, int],
+    spread_level: str,
     spread_heat: float,
     interaction_quality: float,
     score: float,
@@ -249,29 +279,35 @@ def _build_qwen_prompt(
         "你是一名大数据分析师和传统戏曲文化传播顾问。\n\n"
         "以下是一个 B站地方戏曲视频的数据分析结果。\n\n"
         "【指标定义】\n"
-        "传播热度指数用于衡量视频传播广度，计算公式为：\n"
+        "传播热度指数用于衡量视频传播规模与触达能力，计算公式为：\n"
         "传播热度指数 =\n"
-        "0.35 × 播放量归一化\n"
-        "+ 0.20 × 点赞数归一化\n"
-        "+ 0.15 × 收藏数归一化\n"
-        "+ 0.15 × 投币数归一化\n"
-        "+ 0.10 × 评论数归一化\n"
-        "+ 0.05 × 弹幕数归一化\n\n"
+        "0.35 × log1p(播放量)归一化\n"
+        "+ 0.25 × log1p(点赞数)归一化\n"
+        "+ 0.15 × log1p(收藏数)归一化\n"
+        "+ 0.15 × log1p(投币数)归一化\n"
+        "+ 0.10 × log1p(弹幕总数)归一化\n\n"
         "互动质量指数用于衡量观众观看后的主动参与程度，计算公式为：\n"
         "互动质量指数 =\n"
-        "0.25 × 点赞率归一化\n"
-        "+ 0.20 × 投币率归一化\n"
-        "+ 0.20 × 收藏率归一化\n"
-        "+ 0.20 × 评论率归一化\n"
-        "+ 0.15 × 弹幕率归一化\n\n"
+        "(0.30 × 点赞率归一化\n"
+        "+ 0.25 × 投币率归一化\n"
+        "+ 0.25 × 收藏率归一化\n"
+        "+ 0.20 × 弹幕率归一化)\n"
+        "× 播放量置信度\n\n"
+        "播放量置信度 = min(1, log1p(播放量)/log1p(10000))\n\n"
         "综合评分用于筛选代表视频，计算公式为：\n"
         "综合评分 = 0.6 × 传播热度指数 + 0.4 × 互动质量指数\n\n"
         "其中：\n"
         "点赞率 = 点赞数 / 播放量\n"
         "投币率 = 投币数 / 播放量\n"
         "收藏率 = 收藏数 / 播放量\n"
-        "评论率 = 评论数 / 播放量\n"
-        "弹幕率 = 弹幕数 / 播放量\n\n"
+        "弹幕率 = 弹幕总数 / 播放量\n\n"
+        "【重要说明】\n"
+        "1. 传播热度、互动质量、综合评分均为同批样本内相对指数，仅用于横向比较。\n"
+        "2. 不存在及格线、满分100、低于标准等绝对评价。\n"
+        "3. 分析请使用“相对较高/较低、处于中等、样本内靠前/靠后”等相对表述。\n"
+        "4. 评论数据为采样文本（最多60条），仅用于语义/情绪/关注点分析与典型评论展示。\n"
+        "5. 评论样本数量不代表真实评论总数，不得据此判断评论规模、评论率或参与规模。\n"
+        "6. 传播规模判断应主要依据播放、点赞、收藏、投币、弹幕总数等元数据。\n\n"
         "【视频信息】\n"
         f"剧种：{opera}\n"
         f"省份：{province}\n"
@@ -282,12 +318,13 @@ def _build_qwen_prompt(
         f"点赞数：{stats['like']}\n"
         f"投币数：{stats['coin']}\n"
         f"收藏数：{stats['favorite']}\n"
-        f"评论数：{stats['comment']}\n"
-        f"弹幕数：{stats['danmaku']}\n\n"
+        f"弹幕总数：{stats['danmaku']}\n"
+        f"评论样本数（非评论总量）：{stats['commentSampleCount']}\n\n"
         "【计算结果】\n"
         f"传播热度指数：{spread_heat}\n"
         f"互动质量指数：{interaction_quality}\n"
-        f"综合评分：{score}\n\n"
+        f"综合评分：{score}\n"
+        f"传播分层：{spread_level}\n\n"
         "【弹幕高频词】\n"
         f"{keyword_text}\n\n"
         "【高能弹幕】\n"
@@ -305,7 +342,9 @@ def _build_qwen_prompt(
         "2. 不要输出 Markdown；\n"
         "3. 不要解释公式；\n"
         "4. 不要编造播放量、点赞量等未给出的信息；\n"
-        "5. 分析必须结合传播热度指数、互动质量指数、综合评分、弹幕高频词和高能弹幕。"
+        "5. 禁止出现“及格线/满分100/低于标准/评论率低”等表述；\n"
+        "6. 不得因为评论样本条数少而判断传播弱；\n"
+        "7. 分析必须结合传播热度指数、互动质量指数、综合评分、弹幕高频词和高能弹幕。"
     )
 
 
@@ -317,6 +356,7 @@ def _generate_ai_analysis(
     bvid: str,
     title: str,
     stats: Dict[str, int],
+    spread_level: str,
     spread_heat: float,
     interaction_quality: float,
     score: float,
@@ -329,6 +369,7 @@ def _generate_ai_analysis(
         bvid=bvid,
         title=title,
         stats=stats,
+        spread_level=spread_level,
         spread_heat=spread_heat,
         interaction_quality=interaction_quality,
         score=score,
@@ -383,12 +424,20 @@ def build_video_analysis_data(
     comments_df = read_csv(comments_path)
     danmaku_df = read_csv(danmaku_path)
 
+    if any(str(col).strip().lower() in {"comment", "comments", "reply", "评论数", "评论总数"} for col in video_df.columns):
+        print("[WARNING] 检测到 video_info 中存在评论相关字段，但评分已忽略该字段，仅使用 comments_data.csv 统计评论样本数。")
     canonical_video = _canonicalize_video_df(video_df)
     canonical_comments = _canonicalize_comments_df(comments_df)
     canonical_danmaku = _canonicalize_danmaku_df(danmaku_df)
-    _fill_count_by_detail(canonical_video, canonical_comments, target_col="comment")
+    # 评论样本数统一以 comments 明细回填，避免把视频表中的“评论总量”字段误当样本数。
+    canonical_video["comment_sample_count"] = 0.0
+    _fill_count_by_detail(canonical_video, canonical_comments, target_col="comment_sample_count")
     _fill_count_by_detail(canonical_video, canonical_danmaku, target_col="danmaku")
     canonical_video = _calculate_indexes(canonical_video)
+    score_low, score_high = _compute_score_thresholds(canonical_video["score"])
+    canonical_video["spreadLevel"] = canonical_video["score"].map(
+        lambda value: _score_level(float(value), score_low, score_high)
+    )
 
     if qwen_script_path is None:
         qwen_script_path = Path(__file__).resolve().parents[1] / "Qwen_Analysis.py"
@@ -406,9 +455,10 @@ def build_video_analysis_data(
             "like": int(round(float(row["like"]))),
             "coin": int(round(float(row["coin"]))),
             "favorite": int(round(float(row["favorite"]))),
-            "comment": int(round(float(row["comment"]))),
             "danmaku": int(round(float(row["danmaku"]))),
+            "commentSampleCount": int(round(float(row["comment_sample_count"]))),
         }
+        spread_level = str(row.get("spreadLevel", "中等传播"))
         spread_heat = float(row["spreadHeat"])
         interaction_quality = float(row["interactionQuality"])
         score = float(row["score"])
@@ -420,6 +470,7 @@ def build_video_analysis_data(
             bvid=bvid,
             title=str(row["title"]),
             stats=stats,
+            spread_level=spread_level,
             spread_heat=spread_heat,
             interaction_quality=interaction_quality,
             score=score,
@@ -433,7 +484,12 @@ def build_video_analysis_data(
                 "bvid": bvid,
                 "title": str(row["title"]),
                 "stats": stats,
-                "indexes": {"spreadHeat": spread_heat, "interactionQuality": interaction_quality, "score": score},
+                "indexes": {
+                    "spreadHeat": spread_heat,
+                    "interactionQuality": interaction_quality,
+                    "score": score,
+                    "spreadLevel": spread_level,
+                },
                 "keywords": keywords,
                 "danmakuTrend": trend,
                 "aiAnalysis": ai_analysis,
