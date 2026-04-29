@@ -59,7 +59,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--qwen-script",
         type=Path,
-        default=Path(__file__).resolve().parents[1] / "Qwen_Analysis.py",
+        default=Path(__file__).resolve().parent / "Qwen_Analysis.py",
     )
     return parser.parse_args()
 

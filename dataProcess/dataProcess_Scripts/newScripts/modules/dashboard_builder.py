@@ -127,7 +127,7 @@ def build_dashboard_data(
     compare_top10 = build_province_opera_count_score_compare(province_score_stats, opera_province_data)
 
     if qwen_script_path is None:
-        qwen_script_path = Path(__file__).resolve().parents[2] / "Qwen_Analysis.py"
+        qwen_script_path = Path(__file__).resolve().parents[1] / "Qwen_Analysis.py"
     ask_qwen_func = load_qwen_ask_func(qwen_script_path, module_name="legacy_qwen_analysis_dashboard")
     qwen_state = {"disabled": ask_qwen_func is None}
 

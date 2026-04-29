@@ -391,7 +391,7 @@ def build_video_analysis_data(
     canonical_video = _calculate_indexes(canonical_video)
 
     if qwen_script_path is None:
-        qwen_script_path = Path(__file__).resolve().parents[2] / "Qwen_Analysis.py"
+        qwen_script_path = Path(__file__).resolve().parents[1] / "Qwen_Analysis.py"
     ask_qwen_func = load_qwen_ask_func(qwen_script_path, module_name="legacy_qwen_analysis_video")
     qwen_state = {"disabled": ask_qwen_func is None}
 
