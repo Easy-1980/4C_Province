@@ -7,3 +7,4 @@ _tmp_check_json.py
 .env
 dataProcess/dataProcess_Scripts/newScripts/__pycache__/Qwen_Analysis.cpython-310.pyc
 dataProcess/output/bilibili_tasks.json
+dataProcess/dataProcess_Scripts/newScripts/bilibili_tasks.py
